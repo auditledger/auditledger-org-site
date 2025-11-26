@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ledger Book Icon -->
+  <rect x="40" y="40" width="120" height="140" rx="10" fill="url(#logoGradient)"/>
+
+  <!-- Pages/Lines -->
+  <line x1="60" y1="70" x2="140" y2="70" stroke="white" stroke-width="3" opacity="0.8"/>
+  <line x1="60" y1="90" x2="140" y2="90" stroke="white" stroke-width="3" opacity="0.8"/>
+  <line x1="60" y1="110" x2="140" y2="110" stroke="white" stroke-width="3" opacity="0.8"/>
+  <line x1="60" y1="130" x2="120" y2="130" stroke="white" stroke-width="3" opacity="0.8"/>
+
+  <!-- Shield/Lock Icon (Security) -->
+  <path d="M100 145 L85 155 L85 170 Q85 180 100 185 Q115 180 115 170 L115 155 Z"
+        fill="white" opacity="0.9"/>
+  <circle cx="100" cy="165" r="4" fill="url(#logoGradient)"/>
+  <rect x="97" y="167" width="6" height="8" rx="1" fill="url(#logoGradient)"/>
+</svg>
+

@@ -1,0 +1,137 @@
+# Development Workflow
+
+## Initial Setup
+
+First time setup requires creating a virtual environment:
+
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+# Activate it
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## Starting the Development Server
+
+### Option 1: Management Script (Recommended)
+
+```bash
+./start-mkdocs.sh start   # Start server in background
+./start-mkdocs.sh status  # Check if running
+./start-mkdocs.sh logs    # View logs
+./start-mkdocs.sh stop    # Stop server
+./start-mkdocs.sh restart # Restart server
+./start-mkdocs.sh clean   # Stop and clean build artifacts
+```
+
+The script:
+- Automatically activates the virtual environment
+- Manages server process in background
+- Creates `mkdocs.log` for debugging
+- Saves PID to `.mkdocs.pid` for process management
+
+### Option 2: Manual Command
+
+```bash
+source venv/bin/activate
+mkdocs serve
+# Visit http://127.0.0.1:8000
+```
+
+## Adding New Documentation Pages
+
+1. **Create markdown file** in appropriate `docs/` subdirectory
+   - Use lowercase-with-hyphens: `quick-start.md`
+   - Follow the writing guidelines
+   - Include frontmatter if needed
+
+2. **Update navigation** in `mkdocs.yml`:
+
+```yaml
+nav:
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Quick Start: getting-started/quick-start.md
+    - Installation: getting-started/installation.md  # New page
+```
+
+3. **Test locally**:
+
+```bash
+./start-mkdocs.sh restart  # Restart to see nav changes
+```
+
+4. **Add cross-references** from related pages
+
+## Adding Images
+
+1. Place in `docs/assets/` with descriptive names:
+   - `architecture-overview.png`
+   - `dashboard-example.png`
+   - `sdk-workflow-diagram.svg`
+
+2. Optimize images:
+   - Compress PNG/JPG files
+   - Use SVG for diagrams when possible
+   - Keep file sizes reasonable (<500KB)
+
+3. Reference with relative paths:
+
+```markdown
+![Architecture diagram](../assets/architecture-overview.png)
+```
+
+## Before Committing
+
+**Always run these checks:**
+
+```bash
+# Activate environment
+source venv/bin/activate
+
+# Strict build (must pass)
+mkdocs build --strict
+
+# Check for linting issues (if configured)
+# Verify all links work
+# Review changes in browser
+```
+
+The build must complete without errors or warnings.
+
+## Testing Changes
+
+1. **Live preview**: Changes auto-reload with `mkdocs serve`
+2. **Build test**: Run `mkdocs build --strict`
+3. **Link check**: Review all internal/external links
+4. **Multi-browser**: Test in different browsers if UI changes
+5. **Mobile**: Check responsive layout if applicable
+
+## Configuration Changes
+
+When modifying `mkdocs.yml`:
+
+1. Test locally before committing
+2. Document new plugins in comments
+3. Add plugin dependencies to `requirements.txt`
+4. Test strict build
+
+Example:
+
+```yaml
+# mkdocs.yml
+plugins:
+  - search
+  - new-plugin  # Add to requirements.txt too
+```
+
+```txt
+# requirements.txt
+mkdocs>=1.5.0
+mkdocs-material>=9.5.0
+mkdocs-new-plugin>=1.0.0  # Add with version constraint
+```

@@ -1,0 +1,133 @@
+# Code Examples
+
+## Standards
+
+All code examples must:
+
+- Be realistic and working
+- Include error handling
+- Be tested before committing
+- Include helpful comments
+- Specify language for syntax highlighting
+- Follow language-specific best practices
+
+## Structure
+
+```python
+from auditledger import Client
+
+# Initialize client with API key
+client = Client(api_key="your-api-key")
+
+try:
+    # Log an audit event
+    response = client.log_event(
+        action="user.login",
+        user_id="user_123",
+        metadata={"ip": "192.0.2.1"}
+    )
+    print(f"Event logged: {response.event_id}")
+except Exception as e:
+    print(f"Error: {e}")
+```
+
+## Language-Specific Guidelines
+
+### Python
+
+```python
+# Good: Clear, complete example
+from auditledger import Client, AuditLogError
+
+client = Client(api_key=os.getenv("AUDITLEDGER_API_KEY"))
+
+try:
+    event = client.log_event(
+        action="user.login",
+        user_id="user_123"
+    )
+except AuditLogError as e:
+    logger.error(f"Failed to log event: {e}")
+```
+
+### JavaScript/TypeScript
+
+```typescript
+// Good: Async/await with error handling
+import { AuditLedgerClient } from '@auditledger/client';
+
+const client = new AuditLedgerClient({
+  apiKey: process.env.AUDITLEDGER_API_KEY
+});
+
+try {
+  const event = await client.logEvent({
+    action: 'user.login',
+    userId: 'user_123'
+  });
+  console.log(`Event logged: ${event.eventId}`);
+} catch (error) {
+  console.error('Failed to log event:', error);
+}
+```
+
+### Shell/Bash
+
+```bash
+# Good: Complete curl example with error handling
+curl -X POST https://api.auditledger.io/v1/events \
+  -H "Authorization: Bearer ${AUDITLEDGER_API_KEY}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "action": "user.login",
+    "user_id": "user_123"
+  }' || echo "Failed to log event"
+```
+
+## What to Include
+
+✅ **Include:**
+- Authentication setup
+- Error handling
+- Common use cases
+- Practical examples
+- Comments explaining non-obvious code
+- Environment variable usage
+
+❌ **Avoid:**
+- Hardcoded credentials
+- Incomplete examples
+- Overly complex examples
+- Undocumented magic numbers
+- Examples without error handling
+
+## Testing Code Examples
+
+Before including code in documentation:
+
+1. Test the code actually works
+2. Verify error cases are handled
+3. Check that imports are correct
+4. Ensure environment setup is documented
+5. Verify output matches what's shown
+
+## Multi-Language Examples
+
+Use tabs for multi-language examples:
+
+```markdown
+=== "Python"
+    ```python
+    client = Client(api_key="your-key")
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const client = new Client({ apiKey: "your-key" });
+    ```
+
+=== "cURL"
+    ```bash
+    curl -H "Authorization: Bearer your-key" ...
+    ```
+```

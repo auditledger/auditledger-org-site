@@ -1,0 +1,111 @@
+# Writing Guidelines
+
+## Tone & Style
+
+- **Audience**: Developers and technical decision-makers
+- **Voice**: Active voice, second person ("you"), professional but approachable
+- **Clarity**: Define technical terms, avoid unnecessary jargon
+- **Brevity**: Be concise but complete
+
+### Good vs Bad Examples
+
+```markdown
+# Good
+You can authenticate using API keys or OAuth 2.0.
+
+# Bad
+Authentication mechanisms are available.
+```
+
+## Formatting Standards
+
+### Headings
+
+Use sentence case (capitalize first word and proper nouns only):
+
+```markdown
+# Good
+## Getting started with the SDK
+## API authentication methods
+
+# Bad
+## Getting Started With The SDK
+## API Authentication Methods
+```
+
+### Code Blocks
+
+Always specify the language for syntax highlighting:
+
+```markdown
+# Good
+```python
+client = Client(api_key="your-key")
+```
+
+# Bad
+```
+client = Client(api_key="your-key")
+```
+```
+
+### Links
+
+Use relative paths for internal docs, descriptive link text:
+
+```markdown
+# Good
+See the [authentication guide](../api/authentication.md) for details.
+Learn how to [configure your deployment](../deployment/configuration.md).
+
+# Bad
+Click [here](https://auditledger.github.io/api/authentication.html).
+More info [here](https://example.com).
+```
+
+### Lists
+
+- Use bullet points for unordered lists
+- Use numbered lists for sequential steps
+- Keep list items parallel in structure
+- Start each item with a capital letter
+
+### File Naming
+
+Use lowercase with hyphens:
+
+```
+✅ quick-start.md
+✅ api-authentication.md
+✅ deployment-overview.md
+
+❌ QuickStart.md
+❌ API_Authentication.md
+❌ deployment_overview.md
+```
+
+## MkDocs Admonitions
+
+Use Material theme admonitions for important callouts:
+
+```markdown
+!!! note
+    This is important information.
+
+!!! warning
+    Be careful with this approach.
+
+!!! tip
+    Here's a helpful suggestion.
+
+!!! danger
+    Critical warning - data loss possible.
+```
+
+## Content Organization
+
+- Start with overview/context
+- Provide clear prerequisites
+- Include working examples
+- Add cross-references to related docs
+- End with "Next steps" when appropriate

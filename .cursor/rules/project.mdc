@@ -1,0 +1,35 @@
+# Project: AuditLedger Documentation Site
+
+Public-facing MkDocs documentation for the AuditLedger GitHub organization. Built with Material theme, deployed to GitHub Pages.
+
+## Tech Stack
+
+- MkDocs 1.5+ with Material theme 9.5+
+- Python 3.11+
+- GitHub Actions for CI/CD
+- Deployed to GitHub Pages
+
+## File Structure
+
+```
+docs/                   # All documentation source
+  ├── index.md         # Landing page
+  ├── getting-started/ # Onboarding guides
+  ├── sdk/             # SDK documentation
+  ├── api/             # API reference
+  ├── deployment/      # Deployment guides
+  ├── dashboards/      # Dashboard docs
+  ├── community/       # Contributing, support, CoC
+  └── assets/          # Images, diagrams
+mkdocs.yml             # Site configuration & navigation
+requirements.txt       # Python dependencies
+start-mkdocs.sh        # Server management script
+```
+
+## Project Goals
+
+- Developer-focused documentation
+- Clear onboarding paths
+- Comprehensive API/SDK references
+- Deployment and integration guides
+- Community contribution guidelines

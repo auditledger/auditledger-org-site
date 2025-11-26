@@ -1,0 +1,129 @@
+# Git & PR Standards
+
+## Commit Messages
+
+Use present tense, imperative mood, start with a verb:
+
+### Good Examples
+
+```
+Add Python SDK installation guide
+Fix broken links in deployment section
+Update API authentication examples
+Remove deprecated configuration options
+Refactor navigation structure
+```
+
+### Bad Examples
+
+```
+Added installation docs
+Fixed links
+Updates
+WIP
+changes
+```
+
+## Commit Structure
+
+```
+<type>: <subject>
+
+[optional body]
+
+[optional footer]
+```
+
+Types:
+- `Add`: New content or features
+- `Update`: Changes to existing content
+- `Fix`: Bug fixes, broken links, typos
+- `Remove`: Deleting content or files
+- `Refactor`: Reorganizing without changing meaning
+- `Docs`: Meta-documentation changes
+
+## Pull Requests
+
+### Before Opening a PR
+
+- [ ] All tests pass (`mkdocs build --strict`)
+- [ ] Changes reviewed in local preview
+- [ ] Links verified
+- [ ] Screenshots added (if UI changes)
+- [ ] Branch is up to date with main
+
+### PR Template
+
+Use the template in `.github/PULL_REQUEST_TEMPLATE.md`:
+
+- Fill out all sections
+- Check all applicable boxes
+- Include screenshots for visual changes
+- Reference related issues: `Closes #123`, `Related to #456`
+- Provide testing instructions
+
+### PR Title Format
+
+```
+Add feature: Quick start guide for Python SDK
+Fix: Broken links in API documentation
+Update: Deployment configuration examples
+```
+
+### PR Description
+
+Include:
+
+1. **What**: What changes were made
+2. **Why**: Why the changes were needed
+3. **How**: How to test/verify the changes
+4. **Screenshots**: Visual proof if applicable
+5. **Related issues**: Link to issues
+
+Example:
+
+```markdown
+## What
+Added comprehensive Python SDK installation guide.
+
+## Why
+Users were confused about virtual environment setup and dependency management.
+
+## How to Test
+1. Navigate to SDK > Installation
+2. Verify code examples render correctly
+3. Check all links work
+
+## Related Issues
+Closes #42
+```
+
+## Branch Naming
+
+Use descriptive branch names:
+
+```
+docs/add-python-sdk-guide
+docs/update-api-auth
+docs/fix-broken-links
+docs/refactor-navigation
+```
+
+Format: `docs/<action>-<brief-description>`
+
+## Review Process
+
+### As a Contributor
+
+- Respond to feedback promptly
+- Make requested changes
+- Resolve conversations when addressed
+- Keep commits focused and clean
+
+### As a Reviewer
+
+- Check for technical accuracy
+- Verify writing style matches guidelines
+- Test links and code examples
+- Ensure no sensitive information is included
+- Approve when ready or request changes with clear feedback

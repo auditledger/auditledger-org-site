@@ -1,0 +1,164 @@
+site_name: Audit Ledger Documentation
+site_url: https://auditledger.github.io
+site_description: Unified SOC 2 + Industry Compliance Logging for SaaS
+site_author: Audit Ledger
+
+repo_name: auditledger
+repo_url: https://github.com/auditledger
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/logo.png
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - announce.dismiss
+    - toc.follow
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/light-bulb-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Core Concepts: getting-started/concepts.md
+    - Quick Start: getting-started/quick-start.md
+  - API:
+    - Overview: api/overview.md
+    - Classes & Types: api/classes.md
+    - Framework Helpers:
+      - SOC 2 Events: api/soc2-events.md
+      - HIPAA Events: api/hipaa-events.md
+      - PCI DSS Events: api/pcidss-events.md
+  - Deployment:
+    - Overview: deployment/overview.md
+    - Configuration: deployment/configuration.md
+    - Integrations: deployment/integrations.md
+  - Monitoring:
+    - Overview: dashboards/overview.md
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - abbr
+  - footnotes
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/auditledger
+      name: Audit Ledger on GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/auditledger
+      name: Audit Ledger on Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/auditledger
+      name: Audit Ledger on LinkedIn
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            opening an issue on GitHub.
+  version:
+    provider: mike
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
+

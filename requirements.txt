@@ -1,0 +1,14 @@
+# MkDocs and Material theme
+mkdocs>=1.5.0,<2.0.0
+mkdocs-material>=9.5.0,<10.0.0
+
+# Plugins for enhanced functionality
+mkdocs-minify-plugin>=0.8.0,<1.0.0
+mkdocs-git-revision-date-localized-plugin>=1.2.0,<2.0.0
+
+# Optional: API documentation support
+mkdocstrings[python]>=0.24.0,<1.0.0
+
+# Link checking
+mkdocs-linkcheck>=1.0.0,<2.0.0
+

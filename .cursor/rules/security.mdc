@@ -1,0 +1,44 @@
+# 🔒 Security: Public Repository
+
+## Critical Warning
+
+**This is a PUBLIC repository. Never include:**
+
+- Internal architecture details
+- Business secrets or proprietary information
+- Customer-specific data
+- Sensitive internal processes
+- Private API endpoints or credentials
+- Internal configuration details
+- Security vulnerabilities or implementation details
+- Customer names or identifying information (unless publicly disclosed)
+
+## Before Adding Content
+
+Ask yourself:
+
+1. Would this information give competitors an unfair advantage?
+2. Does this reveal sensitive business logic or processes?
+3. Could this expose security vulnerabilities?
+4. Is this information already publicly available elsewhere?
+
+**When in doubt, ask before adding potentially sensitive content.**
+
+## What IS Appropriate
+
+✅ Public API documentation
+✅ SDK usage examples
+✅ Deployment guides (generic)
+✅ Community contribution guidelines
+✅ Getting started guides
+✅ Integration patterns (common, non-proprietary)
+✅ Dashboard usage documentation
+
+## Compliance
+
+All content must:
+
+- Be suitable for public consumption
+- Align with AuditLedger's public messaging
+- Not expose compliance-sensitive details
+- Follow the principle of least disclosure

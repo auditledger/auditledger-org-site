@@ -1,0 +1,155 @@
+# Common Mistakes to Avoid
+
+## ❌ Don't
+
+### Content
+
+- **Add sensitive internal information**
+  - No internal architecture details
+  - No business secrets
+  - No customer data
+
+- **Use absolute URLs for internal links**
+  ```markdown
+  ❌ [API docs](https://auditledger.github.io/api/overview.html)
+  ✅ [API docs](../api/overview.md)
+  ```
+
+- **Skip language tags in code blocks**
+  ```markdown
+  ❌ ```
+     code here
+     ```
+
+  ✅ ```python
+     code here
+     ```
+  ```
+
+- **Create pages without updating navigation**
+  - Always add new pages to `mkdocs.yml` nav section
+  - Test navigation structure
+
+- **Commit without testing**
+  - Must run `mkdocs build --strict` successfully
+  - Preview changes locally first
+
+### Formatting
+
+- **Use title case for headings**
+  ```markdown
+  ❌ ## Getting Started With The SDK
+  ✅ ## Getting started with the SDK
+  ```
+
+- **Use generic link text**
+  ```markdown
+  ❌ Click [here](../guide.md) for more info.
+  ✅ See the [deployment guide](../guide.md) for details.
+  ```
+
+- **Hardcode credentials or keys**
+  ```python
+  ❌ client = Client(api_key="sk_live_123abc...")
+  ✅ client = Client(api_key=os.getenv("AUDITLEDGER_API_KEY"))
+  ```
+
+### Workflow
+
+- **Push broken builds**
+  - CI/CD will fail
+  - Blocks deployment
+
+- **Ignore virtual environment**
+  - Always activate: `source venv/bin/activate`
+  - Keep dependencies in sync
+
+- **Skip PR template**
+  - Makes review harder
+  - Missing context
+
+## ✅ Do
+
+### Content
+
+- **Test all changes locally**
+  ```bash
+  ./start-mkdocs.sh restart
+  mkdocs build --strict
+  ```
+
+- **Use relative links for internal docs**
+  ```markdown
+  [Getting started](../getting-started/overview.md)
+  ```
+
+- **Specify language in all code blocks**
+  ```markdown
+  ```python
+  # Python code
+  ```
+
+  ```bash
+  # Shell commands
+  ```
+  ```
+
+- **Follow the style guide**
+  - Sentence case headings
+  - Active voice
+  - Second person ("you")
+
+- **Keep content public-appropriate**
+  - Developer-focused
+  - No internal details
+  - Test examples work
+
+### Workflow
+
+- **Update navigation when adding pages**
+  ```yaml
+  nav:
+    - New Section:
+      - Overview: new-section/overview.md  # Add this
+  ```
+
+- **Test before committing**
+  ```bash
+  source venv/bin/activate
+  mkdocs build --strict  # Must pass
+  ```
+
+- **Use the PR template**
+  - Fill all sections
+  - Check boxes
+  - Add screenshots
+
+### Quality
+
+- **Add cross-references**
+  - Link to related documentation
+  - Help users navigate
+
+- **Include working examples**
+  - Test code before including
+  - Add error handling
+  - Use comments
+
+- **Optimize images**
+  - Compress before adding
+  - Use appropriate formats
+  - Keep files under 500KB
+
+## Quick Checklist
+
+Before committing, verify:
+
+- [ ] `mkdocs build --strict` passes
+- [ ] Changes previewed locally
+- [ ] No sensitive information included
+- [ ] Code blocks have language tags
+- [ ] Links use relative paths (internal)
+- [ ] Navigation updated (if new pages)
+- [ ] Images optimized
+- [ ] Writing follows style guide
+- [ ] Virtual environment activated
