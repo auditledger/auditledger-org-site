@@ -8,7 +8,6 @@ repo_url: https://github.com/auditledger
 
 theme:
   name: material
-  custom_dir: docs/overrides
   logo: assets/logo.png
   features:
     - navigation.tabs
