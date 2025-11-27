@@ -206,7 +206,7 @@ await _auditLedger.LogAsync(auditEvent);
 - :material-book-open-variant: **[Core Concepts](concepts.md)** - Understand event chains and tamper detection
 - :material-api: **[API Reference](../api/overview.md)** - Explore all Framework Helpers and methods
 - :material-terraform: **[Terraform Modules](../deployment/overview.md)** - Automate infrastructure setup
-- :material-github: **[GitHub Discussions](https://github.com/auditledger/discussions)** - Ask questions and get help
+- :material-github: **[GitHub](https://github.com/auditledger)** - View source code and contribute
 
 ---
 
