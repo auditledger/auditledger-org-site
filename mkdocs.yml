@@ -134,12 +134,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/auditledger
       name: Audit Ledger on GitHub
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/auditledger
-      name: Audit Ledger on Twitter
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/auditledger
-      name: Audit Ledger on LinkedIn
+
   analytics:
     feedback:
       title: Was this page helpful?
