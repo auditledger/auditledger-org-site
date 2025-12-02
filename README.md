@@ -28,8 +28,8 @@ This repository hosts the complete documentation for Audit Ledger, including:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/auditledger/auditledger-org-site.git
-cd auditledger-org-site
+git clone https://github.com/auditledger/auditledger.git
+cd auditledger
 ```
 
 2. Set up Python virtual environment and install dependencies:
@@ -191,8 +191,8 @@ The site is automatically built and deployed to GitHub Pages when changes are pu
 
 ## 📞 Support & Feedback
 
-- **Issues**: [GitHub Issues](https://github.com/auditledger/auditledger-org-site/issues) - Report documentation bugs or suggest improvements
-- **Discussions**: [GitHub Discussions](https://github.com/auditledger/auditledger-org-site/discussions) - Ask questions and share feedback
+- **Issues**: [GitHub Issues](https://github.com/auditledger/auditledger/issues) - Report documentation bugs or suggest improvements
+- **Discussions**: [GitHub Discussions](https://github.com/auditledger/auditledger/discussions) - Ask questions and share feedback
 
 ## 📄 License
 
